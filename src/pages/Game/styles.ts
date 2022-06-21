@@ -9,6 +9,7 @@ export const Page = styled.main`
 
   section {
     background: ${Color.BackgroundLighter};
+    min-width: 26rem;
     width: 100%;
     padding: 2rem;
     margin: 5rem;
