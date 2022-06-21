@@ -1,15 +1,15 @@
 import { ReactComponent as EtherSvg } from 'assets/ether-icon.svg';
-import { IntroBox } from './styles';
+import { Page } from './styles';
 
-export function Intro() {
+export function Home() {
   return (
-    <IntroBox>
+    <Page>
       <div>
         <h1>ETHER CLICKER</h1>
         <EtherSvg />
       </div>
       <p>Earn ether by clicking</p>
       <a href="play">START NOW</a>
-    </IntroBox>
+    </Page>
   );
 }

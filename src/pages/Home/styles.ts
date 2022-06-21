@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Color, Font, FontSize } from 'styles/theme';
 
-export const IntroBox = styled.div`
+export const Page = styled.main`
   height: 100vh;
   display: flex;
   align-items: center;
@@ -33,6 +33,8 @@ export const IntroBox = styled.div`
 
     border-radius: 999px;
     margin-top: 3rem;
+
+    transition: all 200ms ease-out;
 
     :hover {
       background: ${Color.PrimaryLighter};

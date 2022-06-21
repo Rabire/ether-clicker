@@ -1,5 +1,8 @@
-import { Intro } from 'components/Intro';
+import { Home } from 'pages/Home';
+import { Game } from 'pages/Game';
 import { CssReset, Theme } from 'styles/globals';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -7,7 +10,12 @@ function App() {
       <CssReset />
       <Theme />
 
-      <Intro />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="play" element={<Game />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
