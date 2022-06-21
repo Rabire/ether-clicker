@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Color, FontSize } from 'styles/theme';
 
 export const Page = styled.main`
@@ -12,6 +12,19 @@ export const Page = styled.main`
     width: 100%;
     padding: 2rem;
     margin: 5rem;
+  }
+`;
+
+const coinAnimation = keyframes`
+ from { transform: scale(1) }
+ to { transform: scale(1.1) }
+`;
+
+export const CoinButton = styled.button`
+  animation: ${coinAnimation} 3s infinite alternate ease-in-out;
+
+  :active {
+    animation: ${coinAnimation} 0.2s ease-in-out;
   }
 `;
 

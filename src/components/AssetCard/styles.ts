@@ -16,7 +16,6 @@ export const Card = styled.div<CardProps>`
   pointer-events: ${(props) => (props.isMutted ? 'none' : 'auto')};
 
   div {
-    /* background: greenyellow; */
     width: 100%;
     margin: 0 1rem;
   }
