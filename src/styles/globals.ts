@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    background: radial-gradient(#424242, #191A19);
+    background: radial-gradient(${Color.BackgroundLighter}, ${Color.Background});
     color: ${Color.UtilityLight};
     font-family: ${Font.Text};
     font-size: ${FontSize.Regular};

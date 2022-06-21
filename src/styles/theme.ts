@@ -7,6 +7,9 @@ export enum Color {
   UtilityLight = '#FFFFFF',
   UtilityDark = '#2B2D2F',
 
+  Background = '#191A19',
+  BackgroundLighter = '#424242',
+
   Transparent = 'transparent'
 }
 
