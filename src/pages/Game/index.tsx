@@ -1,5 +1,6 @@
 import { useGame } from 'hooks/useGame';
-import { Page, Section, ClaimButton } from './styles';
+import { AssetsSection } from 'components/AssetsSection';
+import { Page, ScoreSection, ClaimButton } from './styles';
 import coin from '../../assets/ether-coin.png';
 
 export function Game() {
@@ -9,16 +10,16 @@ export function Game() {
 
   return (
     <Page>
-      <Section>
+      <ScoreSection>
         <h1>{coins} Coins</h1>
         <ClaimButton type="button">Claim</ClaimButton>
-      </Section>
+      </ScoreSection>
 
       <button type="button" onClick={onCoinClick}>
         <img src={coin} alt="clickable coin" />
       </button>
 
-      <Section>ok</Section>
+      <AssetsSection />
     </Page>
   );
 }

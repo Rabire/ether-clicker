@@ -5,7 +5,7 @@ export enum Color {
   Secondary = '#E5C1CD',
 
   UtilityLight = '#FFFFFF',
-  UtilityDark = '#2B2D2F',
+  UtilityDark = '#bdbdbd',
 
   Background = '#191A19',
   BackgroundLighter = '#424242',

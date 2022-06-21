@@ -6,16 +6,16 @@ export const Page = styled.main`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  section {
+    background: ${Color.BackgroundLighter};
+    width: 100%;
+    padding: 2rem;
+    margin: 5rem;
+  }
 `;
 
-export const Section = styled.section`
-  background: ${Color.BackgroundLighter};
-  height: calc(100% - 10rem);
-  margin-top: 5rem;
-  width: 100%;
-  padding: 5rem;
-  margin: 5rem;
-
+export const ScoreSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +27,7 @@ export const Section = styled.section`
 `;
 
 export const ClaimButton = styled.button`
-  margin-top: auto;
+  margin-top: 2rem;
   padding: 1rem;
   width: 100%;
   background: ${Color.Primary};
