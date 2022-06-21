@@ -1,8 +1,10 @@
 import { AssetCard } from 'components/AssetCard';
-import { assets } from './content';
+import { useGame } from 'hooks/useGame';
 import { Section } from './styles';
 
 export function AssetsSection() {
+  const { assets } = useGame();
+
   return (
     <Section>
       {assets.map((asset) => (

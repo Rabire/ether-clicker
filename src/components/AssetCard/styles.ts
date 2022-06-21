@@ -9,13 +9,6 @@ export const Card = styled.div`
 
   padding: 1rem;
 
-  img {
-    min-height: 5rem;
-    min-width: 5rem;
-    background: ${Color.BackgroundLighter};
-    border-radius: 50%;
-  }
-
   div {
     /* background: greenyellow; */
     width: 100%;
