@@ -20,6 +20,8 @@ export enum FontSize {
   Regular = '1.6rem',
   /** 24px */
   Title = '2.4rem',
+  /** 32px */
+  Big = '3.2rem',
   /** 50px */
   Huge = '5rem'
 }

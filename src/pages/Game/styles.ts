@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Color, Font, FontSize } from 'styles/theme';
+import { Color, FontSize } from 'styles/theme';
 
 export const Page = styled.main`
   height: 100vh;
@@ -21,11 +21,8 @@ export const Section = styled.section`
   justify-content: space-between;
   flex-direction: column;
 
-  button {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background: ${Color.Primary};
-    border-radius: 999px;
+  h1 {
+    font-size: ${FontSize.Big};
   }
 `;
 
