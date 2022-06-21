@@ -7,7 +7,7 @@ type Props = {
 };
 
 export function AssetCard({ asset }: Props) {
-  const { setCoins } = useGame();
+  const { setCoins, coins } = useGame();
 
   const onBuy = () => {
     setCoins((prev) => prev - asset.price);
@@ -15,7 +15,7 @@ export function AssetCard({ asset }: Props) {
   };
 
   return (
-    <Card>
+    <Card isMutted={coins < asset.price}>
       <div>
         <h2>{asset.name}</h2>
         <p>{asset.description}</p>

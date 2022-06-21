@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 import { Color, FontSize } from 'styles/theme';
 
-export const Card = styled.div`
+type CardProps = {
+  isMutted: boolean;
+};
+
+export const Card = styled.div<CardProps>`
   background: ${Color.Background};
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 1rem;
+
+  opacity: ${(props) => (props.isMutted ? '0.2' : '1')};
+  pointer-events: ${(props) => (props.isMutted ? 'none' : 'auto')};
 
   div {
     /* background: greenyellow; */
