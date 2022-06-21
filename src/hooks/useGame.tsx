@@ -1,9 +1,17 @@
 import { GameContext } from 'contexts/Game';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Asset } from 'utils/dto';
 
 export const useGame = () => {
   const { coins, setCoins, multiplier, setMultiplier } = useContext(GameContext);
+
+  const [passiveCoins, setPassiveCoins] = useState(0); // passive coins per second
+
+  useEffect(() => {
+    const timer = setTimeout(() => setCoins((prev) => prev + passiveCoins), 1000);
+
+    return () => clearTimeout(timer);
+  });
 
   const assets: Asset[] = [
     {
@@ -15,11 +23,11 @@ export const useGame = () => {
       }
     },
     {
-      name: 'Passive Bonus',
+      name: `Passive Bonus`,
       description: 'Get a free coin each seconds',
       price: 100,
       onBuy: () => {
-        return null;
+        setPassiveCoins((prev) => prev + 1);
       }
     },
     {
