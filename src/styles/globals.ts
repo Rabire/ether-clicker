@@ -18,8 +18,8 @@ html {
 }
 
 body {
-    background: ${Color.Background};
-    color: ${Color.UtilityDark};
+    background: radial-gradient(#424242, #191A19);
+    color: ${Color.UtilityLight};
     font-family: ${Font.Text};
     font-size: ${FontSize.Regular};
     scroll-behavior: smooth;

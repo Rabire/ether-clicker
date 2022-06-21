@@ -1,3 +1,4 @@
+import { Intro } from 'components/Intro';
 import { CssReset, Theme } from 'styles/globals';
 
 function App() {
@@ -6,8 +7,7 @@ function App() {
       <CssReset />
       <Theme />
 
-      <h1>App</h1>
-      <p>Hello world</p>
+      <Intro />
     </>
   );
 }

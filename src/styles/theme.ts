@@ -1,12 +1,13 @@
 export enum Color {
-  Primary = '#ACC9CE',
+  Primary = '#636890',
+  PrimaryLighter = '#8992b1',
+  PrimaryDarker = '#454a74',
   Secondary = '#E5C1CD',
 
   UtilityLight = '#FFFFFF',
   UtilityDark = '#2B2D2F',
 
-  Transparent = 'transparent',
-  Background = '#E5E5E5'
+  Transparent = 'transparent'
 }
 
 export enum FontSize {
@@ -15,7 +16,9 @@ export enum FontSize {
   /** 16px - default */
   Regular = '1.6rem',
   /** 24px */
-  Title = '2.4rem'
+  Title = '2.4rem',
+  /** 50px */
+  Huge = '5rem'
 }
 
 export enum FontWeight {
@@ -25,6 +28,7 @@ export enum FontWeight {
 }
 
 export enum Font {
-  Text = "Mulish, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', sans-serif", // default
-  Title = "'Baloo Bhai', 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', sans-serif"
+  Text = "Cousine, 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', sans-serif", // default
+  Title = "'Fredoka One', 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', sans-serif",
+  Caligraphy = "'Reenie Beanie', 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', sans-serif"
 }
