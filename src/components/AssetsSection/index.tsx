@@ -8,7 +8,7 @@ export function AssetsSection() {
   return (
     <Section>
       {assets.map((asset) => (
-        <AssetCard asset={asset} />
+        <AssetCard key={asset.name} asset={asset} />
       ))}
     </Section>
   );
