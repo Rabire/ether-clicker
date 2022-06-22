@@ -12,19 +12,27 @@ export const useWeb3 = () => {
 
   useEffect(() => {
     if (typeof provider === 'undefined') {
-      console.log('Metamask is not installed');
+      console.log('metamask is not installed');
     }
-  }, []);
 
-  const connectToAccount = () => {
+    // get current Metamask account
     provider
-      ?.request({ method: 'eth_requestAccounts' })
-      .then((account) => {
-        console.log(account);
+      .request({ method: 'eth_requestAccounts' })
+      .then((accounts) => {
+        console.log(accounts);
       })
       .catch((error) => {
         console.log(error);
       });
+
+    // listen account changement
+    provider.on('accountsChanged', (accounts) => {
+      console.log(accounts);
+    });
+  }, []);
+
+  const connectToAccount = () => {
+    //
   };
 
   return { connectToAccount };
