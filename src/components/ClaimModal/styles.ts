@@ -18,13 +18,41 @@ export const Background = styled.div`
 export const Modal = styled.div`
   background: ${Color.UtilityLight};
   color: ${Color.Background};
-
+  text-align: center;
   padding: 2rem;
+
+  p {
+    font-style: italic;
+  }
 `;
 
 export const Exit = styled.button`
-  background: red;
   margin-left: auto;
   margin-bottom: 2rem;
   padding: 0.5rem;
+`;
+
+export const Form = styled.form`
+  margin-top: 2rem;
+  text-align: left;
+
+  div {
+    display: flex;
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    button {
+      background: ${Color.Primary};
+      padding: 1rem;
+      color: ${Color.UtilityLight};
+      margin-left: 1rem;
+
+      :hover {
+        background: ${Color.PrimaryLighter};
+      }
+    }
+  }
 `;

@@ -12,20 +12,24 @@ export function Game() {
 
   const onCoinClick = () => setCoins((prev) => prev + 1 * multiplier);
 
+  const closeModal = () => setIsClaimModalOpen(false);
+
   return (
-    <Page>
-      <ScoreSection>
-        <h1>{coins} Coins</h1>
-        <ClaimButton onClick={() => setIsClaimModalOpen(true)}>Claim</ClaimButton>
-      </ScoreSection>
+    <>
+      <Page>
+        <ScoreSection>
+          <h1>{coins} Coins</h1>
+          <ClaimButton onClick={() => setIsClaimModalOpen(true)}>Claim</ClaimButton>
+        </ScoreSection>
 
-      <CoinButton onClick={onCoinClick}>
-        <img src={coin} alt="clickable coin" />
-      </CoinButton>
+        <CoinButton onClick={onCoinClick}>
+          <img src={coin} alt="clickable coin" />
+        </CoinButton>
 
-      <AssetsSection />
+        <AssetsSection />
+      </Page>
 
-      {isClaimModalOpen && <ClaimModal />}
-    </Page>
+      {isClaimModalOpen && <ClaimModal closeModal={closeModal} />}
+    </>
   );
 }
