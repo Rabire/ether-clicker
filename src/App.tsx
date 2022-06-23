@@ -3,6 +3,7 @@ import { GameContextProvider } from 'contexts/Game';
 import { Home } from 'pages/Home';
 import { Game } from 'pages/Game';
 import { CssReset, Theme } from 'styles/globals';
+import { DAppProvider } from '@usedapp/core';
 
 function App() {
   return (
@@ -10,14 +11,16 @@ function App() {
       <CssReset />
       <Theme />
 
-      <GameContextProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="play" element={<Game />} />
-          </Routes>
-        </BrowserRouter>
-      </GameContextProvider>
+      <DAppProvider config={{}}>
+        <GameContextProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="play" element={<Game />} />
+            </Routes>
+          </BrowserRouter>
+        </GameContextProvider>
+      </DAppProvider>
     </>
   );
 }

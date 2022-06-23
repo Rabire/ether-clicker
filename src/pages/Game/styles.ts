@@ -38,6 +38,13 @@ export const ScoreSection = styled.section`
   h1 {
     font-size: ${FontSize.Big};
   }
+
+  p {
+    color: ${Color.UtilityDark};
+    font-style: italic;
+    font-size: ${FontSize.Small};
+    margin-top: 1rem;
+  }
 `;
 
 export const ClaimButton = styled.button`
