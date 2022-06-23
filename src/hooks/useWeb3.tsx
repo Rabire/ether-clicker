@@ -44,8 +44,6 @@ export const useWeb3 = () => {
 
   const [history]: any = useContractCall(getContractCall('getHistory')) || [];
 
-  const [myScore]: any = useContractCall(getContractCall('getMyScore')) || [];
-
   const contract = new Contract(CONTRACT_ADDRESS, simpleContractInterface) as any;
 
   const { send } = useContractFunction(contract, 'withdrawCoins', {});
@@ -65,7 +63,6 @@ export const useWeb3 = () => {
     actualWinner,
     history,
     sendCoins,
-    isMetamaskInstalled,
-    myScore
+    isMetamaskInstalled
   };
 };
