@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { MetaMaskInpageProvider } from '@metamask/providers';
 import { ethers } from 'ethers';
 import { useContractCall, useContractFunction } from '@usedapp/core';
-// import { Contract } from '@ethersproject/contracts';
+import { useGame } from 'hooks/useGame';
+
+import { Contract } from '@ethersproject/contracts';
 
 import ABI from 'data/ABI.json';
 
@@ -26,6 +28,8 @@ const getContractCall = (method: string) => ({
 export const useWeb3 = () => {
   const [isMetamaskInstalled, setMetamaskInstalled] = useState(true);
 
+  const { coins, setCoins } = useGame();
+
   useEffect(() => {
     if (typeof window.ethereum === 'undefined') {
       setMetamaskInstalled(false);
@@ -38,17 +42,20 @@ export const useWeb3 = () => {
 
   const [history]: any = useContractCall(getContractCall('getHistory')) || [];
 
-  //   const contract = new Contract(CONTRACT_ADDRESS, simpleContractInterface);
+  const contract = new Contract(CONTRACT_ADDRESS, simpleContractInterface) as any;
 
-  //   const { state, send } = useContractFunction(contract, 'setCoins', {});
+  const { send } = useContractFunction(contract, 'setCoins', {});
 
-  //   const sendCoins = (coins: number) => send({});
+  const sendCoins = () => {
+    setCoins(0);
+    send([coins]);
+  };
 
   return {
     bestPlayer,
     bestScore,
     history,
-    // sendCoins
+    sendCoins,
     isMetamaskInstalled
   };
 };

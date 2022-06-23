@@ -8,23 +8,20 @@ import coin from '../../assets/ether-coin.png';
 
 export function Game() {
   const { coins, setCoins, multiplier } = useGame();
-  const { bestPlayer, bestScore, history, isMetamaskInstalled } = useWeb3();
+  const { bestPlayer, bestScore, history, isMetamaskInstalled, sendCoins } = useWeb3();
 
   const onCoinClick = () => setCoins((prev) => prev + 1 * multiplier);
-
-  const claimCoins = () => {
-    //
-  };
 
   return (
     <Page>
       <ScoreSection>
         <h1>{coins} Coins</h1>
+
         <div>
           <h3>History :</h3>
           {history &&
             history
-              .slice(-15)
+              .slice(-10)
               .map((row: [string, { _hex: string }], index: number) => (
                 <div key={index} className="row">{`${row[0].slice(0, 17)}...  +${
                   row[1]
@@ -34,11 +31,12 @@ export function Game() {
 
         <div>
           <h3>Best Player :</h3>
-          <div className="row">{`${bestPlayer && bestPlayer.slice(0, 17)}... : +${
+          <div className="row">{`${bestPlayer && bestPlayer.slice(0, 17)}... : ${
             bestScore && parseInt(bestScore['_hex'], 16)
           } Coins`}</div>
         </div>
-        <ClaimButton onClick={claimCoins} disabled={!isMetamaskInstalled}>
+
+        <ClaimButton onClick={sendCoins} disabled={!isMetamaskInstalled}>
           Claim
         </ClaimButton>
         {!isMetamaskInstalled && <p>Meta mask is not installed</p>}
