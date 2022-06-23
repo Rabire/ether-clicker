@@ -7,7 +7,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "setCoins",
+		"name": "withdrawCoins",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -58,6 +58,19 @@
 				"internalType": "struct EtherClicker.Transaction[]",
 				"name": "",
 				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMyScore",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",

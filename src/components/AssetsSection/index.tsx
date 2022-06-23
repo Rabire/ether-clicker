@@ -7,7 +7,7 @@ import { Section } from './styles';
 export function AssetsSection() {
   const { assets } = useGame();
 
-  const { actualWinner } = useWeb3();
+  const { actualWinner, myScore } = useWeb3();
 
   return (
     <Section>
@@ -18,7 +18,7 @@ export function AssetsSection() {
       <div className="stats">
         <h3>Your coin balance :</h3>
         {actualWinner ? (
-          <div className="row">{`${actualWinner.player} : ${actualWinner.score} Coins`}</div>
+          <div className="row">{`${actualWinner.player} : ${myScore || '??'} Coins`}</div>
         ) : (
           <div className="row">unknown</div>
         )}
