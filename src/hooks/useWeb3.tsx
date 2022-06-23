@@ -32,8 +32,6 @@ export const useWeb3 = () => {
     }
   }, []);
 
-  const simpleContractInterface = new ethers.utils.Interface(ABI);
-
   const [bestPlayer]: any = useContractCall(getContractCall('bestPlayer')) || [];
 
   const [bestScore]: any = useContractCall(getContractCall('bestScore')) || [];
@@ -42,9 +40,7 @@ export const useWeb3 = () => {
 
   //   const contract = new Contract(CONTRACT_ADDRESS, simpleContractInterface);
 
-  //   const { state, send } = useContractFunction(contract, 'setCoins', {
-  //     transactionName: 'Wrap'
-  //   });
+  //   const { state, send } = useContractFunction(contract, 'setCoins', {});
 
   //   const sendCoins = (coins: number) => send({});
 

@@ -45,6 +45,22 @@ export const ScoreSection = styled.section`
     font-size: ${FontSize.Small};
     margin-top: 1rem;
   }
+
+  div {
+    margin-top: 1rem;
+    width: 100%;
+
+    font-size: ${FontSize.Regular};
+
+    h3 {
+      font-size: ${FontSize.Regular};
+    }
+  }
+
+  .row {
+    color: ${Color.UtilityDark};
+    margin-left: 2rem;
+  }
 `;
 
 export const ClaimButton = styled.button`
