@@ -7,7 +7,7 @@ import { Section } from './styles';
 export function AssetsSection() {
   const { assets } = useGame();
 
-  const { bestPlayer, bestScore } = useWeb3();
+  const { actualWinner } = useWeb3();
 
   return (
     <Section>
@@ -17,9 +17,11 @@ export function AssetsSection() {
 
       <div className="stats">
         <h3>Your coin balance :</h3>
-        <div className="row">{`${bestPlayer && bestPlayer.slice(0, 17)}... : ${
-          bestScore && parseInt(bestScore['_hex'], 16)
-        } Coins`}</div>
+        {actualWinner ? (
+          <div className="row">{`${actualWinner.player} : ${actualWinner.score} Coins`}</div>
+        ) : (
+          <div className="row">unknown</div>
+        )}
       </div>
     </Section>
   );

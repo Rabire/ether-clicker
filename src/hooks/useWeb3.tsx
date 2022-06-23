@@ -1,3 +1,4 @@
+/* eslint-disable dot-notation */
 import { useEffect, useState } from 'react';
 import { MetaMaskInpageProvider } from '@metamask/providers';
 import { ethers } from 'ethers';
@@ -46,14 +47,19 @@ export const useWeb3 = () => {
 
   const { send } = useContractFunction(contract, 'setCoins', {});
 
+  const actualWinner = bestScore &&
+    bestPlayer && {
+      score: parseInt(bestScore['_hex'], 16),
+      player: `${bestPlayer.slice(0, 17)}...`
+    };
+
   const sendCoins = () => {
     setCoins(0);
     send([coins]);
   };
 
   return {
-    bestPlayer,
-    bestScore,
+    actualWinner,
     history,
     sendCoins,
     isMetamaskInstalled

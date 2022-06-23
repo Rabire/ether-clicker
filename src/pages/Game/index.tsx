@@ -8,7 +8,7 @@ import coin from '../../assets/ether-coin.png';
 
 export function Game() {
   const { coins, setCoins, multiplier } = useGame();
-  const { bestPlayer, bestScore, history, isMetamaskInstalled, sendCoins } = useWeb3();
+  const { actualWinner, history, isMetamaskInstalled, sendCoins } = useWeb3();
 
   const onCoinClick = () => setCoins((prev) => prev + 1 * multiplier);
 
@@ -31,9 +31,11 @@ export function Game() {
 
         <div>
           <h3>Best Player :</h3>
-          <div className="row">{`${bestPlayer && bestPlayer.slice(0, 17)}... : ${
-            bestScore && parseInt(bestScore['_hex'], 16)
-          } Coins`}</div>
+          {actualWinner ? (
+            <div className="row">{`${actualWinner.player} : ${actualWinner.score} Coins`}</div>
+          ) : (
+            <div className="row">unknown</div>
+          )}
         </div>
 
         <ClaimButton onClick={sendCoins} disabled={!isMetamaskInstalled}>
